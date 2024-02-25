@@ -1,6 +1,6 @@
 import { useState, useId } from 'react';
 
-import styles from './loginForm.module.css';
+//import styles from './loginForm.module.css';
 
 const INITIAL_STATE = {
   name: '',
@@ -29,8 +29,8 @@ const LoginForm = ({ onSubmit }) => {
 
   const { email, password } = state;
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.wrapper}>
+    <form onSubmit={handleSubmit}>
+      <div>
         <label htmlFor={emailId}>Email:</label>
         <input
           value={email}
@@ -41,7 +41,7 @@ const LoginForm = ({ onSubmit }) => {
           required
         />
       </div>
-      <div className={styles.wrapper}>
+      <div>
         <label htmlFor={passwordId}>Password:</label>
         <input
           value={password}
