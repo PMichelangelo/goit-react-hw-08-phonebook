@@ -1,25 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchContacts, deleteContact, addContact } from "./contacts-operations";
+import {
+  fetchContacts,
+  deleteContact,
+  addContact,
+} from './contacts-operations';
+
+import { pending, rejected } from '../../shared/functions/redux';
 
 const initialState = {
   items: [],
   isLoading: false,
-  error: null
-}
-
-const pending = (state) => {
-  state.isLoading = true;
-  state.error = null
-};
-
-const rejected = (state, { payload }) => {
-  state.isLoading = false
-  state.error = payload
+  error: null,
 };
 
 const contactsSlice = createSlice({
-  name: "contacts",
+  name: 'contacts',
   initialState,
   /*reducers: {
     fetchContactsLoading: loadingReducer,
@@ -57,13 +53,12 @@ const contactsSlice = createSlice({
       })
       .addCase(addContact.rejected, rejected)
       .addCase(deleteContact.pending, pending)
-      .addCase(deleteContact.fulfilled, (state, {payload}) => {
-        state.isLoading = false
-        state.items = state.items.filter(({id})=> id !== payload)
-    })
-      .addCase(deleteContact.rejected,rejected)
-  }
-})
-
+      .addCase(deleteContact.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.items = state.items.filter(({ id }) => id !== payload);
+      })
+      .addCase(deleteContact.rejected, rejected);
+  },
+});
 
 export default contactsSlice.reducer;

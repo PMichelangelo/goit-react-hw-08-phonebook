@@ -1,0 +1,20 @@
+.authWrapper {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:global(.active) {
+  font-weight: bold;
+}

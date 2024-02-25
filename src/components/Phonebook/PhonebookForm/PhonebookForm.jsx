@@ -6,17 +6,17 @@ import { addContact } from '../../../redux/contacts/contacts-operations';
 import styles from './phonebookForm.module.css';
 
 const INITIAL_STATE = {
-    contacts: [],
-    filter: '',
-    name: '',
-    phone: ''
+  contacts: [],
+  filter: '',
+  name: '',
+  phone: '',
 };
 
 const PhonebookForm = () => {
-  const [state, setState] = useState({ ...INITIAL_STATE })
+  const [state, setState] = useState({ ...INITIAL_STATE });
 
   const dispatch = useDispatch();
-/*
+  /*
   useEffect(() => {
     dispatch(fetchContacts())
   }, [])
@@ -34,33 +34,33 @@ const PhonebookForm = () => {
     return Boolean(dublicate);
   };
 */
-  const onAddContact = (data) => {
-    const action = addContact(data)
-    dispatch(action)
-  }
+  const onAddContact = data => {
+    const action = addContact(data);
+    dispatch(action);
+  };
 
-    const handleChange = ({target}) => {
+  const handleChange = ({ target }) => {
     const { name, value } = target;
     setState({
       ...state,
-      [name]: value
-    })
+      [name]: value,
+    });
   };
 
- const handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
-   onAddContact({ ...state })
-     reset()
- };
+    onAddContact({ ...state });
+    reset();
+  };
 
   const reset = () => {
-    setState({...INITIAL_STATE})
-  }
+    setState({ ...INITIAL_STATE });
+  };
 
-  const nameId = nanoid()
-  const phoneId = nanoid()
+  const nameId = nanoid();
+  const phoneId = nanoid();
 
-  const {name, phone } = state
+  const { name, phone } = state;
 
   return (
     <div className={styles.wrapper}>

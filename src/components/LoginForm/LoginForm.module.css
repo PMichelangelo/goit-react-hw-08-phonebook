@@ -1,0 +1,12 @@
+.form {
+  margin: 20px;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.wrapper label {
+  width: 80px;
+}

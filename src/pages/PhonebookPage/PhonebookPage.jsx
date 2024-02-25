@@ -1,12 +1,11 @@
-import Phonebook from "components/Phonebook/Phonebook";
+import Phonebook from 'components/Phonebook/Phonebook';
 
 const PhonebookPage = () => {
   return (
     <div>
-      <h1>Phonebook</h1>
-      <Phonebook/>
+      <Phonebook />
     </div>
-  )
-}
+  );
+};
 
 export default PhonebookPage;
