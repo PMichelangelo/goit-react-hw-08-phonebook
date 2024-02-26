@@ -9,31 +9,14 @@ const INITIAL_STATE = {
   contacts: [],
   filter: '',
   name: '',
-  phone: '',
+  number: '',
 };
 
 const PhonebookForm = () => {
   const [state, setState] = useState({ ...INITIAL_STATE });
 
   const dispatch = useDispatch();
-  /*
-  useEffect(() => {
-    dispatch(fetchContacts())
-  }, [])
 
-  const isDublicate = ({ name, phone }) => {
-    const normalizedName = name.toLowerCase();
-    const normalizedNumber = phone.trim();
-
-    const dublicate = contacts.find(item => {
-        const normalizeCurrentName = item.name.toLowerCase();
-        const normalizeCurrentNumber = item.phone.trim();
-        return (normalizeCurrentName === normalizedName || normalizeCurrentNumber === normalizedNumber)
-    })
-
-    return Boolean(dublicate);
-  };
-*/
   const onAddContact = data => {
     const action = addContact(data);
     dispatch(action);
@@ -58,9 +41,9 @@ const PhonebookForm = () => {
   };
 
   const nameId = nanoid();
-  const phoneId = nanoid();
+  const numberId = nanoid();
 
-  const { name, phone } = state;
+  const { name, number } = state;
 
   return (
     <div className={styles.wrapper}>
@@ -77,14 +60,14 @@ const PhonebookForm = () => {
             onChange={handleChange}
             required
           />
-          <label htmlFor={phoneId}>Phone</label>
+          <label htmlFor={numberId}>Phone</label>
           <input
-            value={phone}
+            value={number}
             type="tel"
-            name="phone"
+            name="number"
             placeholder="Phone"
             className={styles.inputName}
-            id={phoneId}
+            id={numberId}
             onChange={handleChange}
             pattern="^[+0-9\-\(\)\s]+$"
             required
