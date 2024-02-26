@@ -1,6 +1,6 @@
 import { useState, useId } from 'react';
 
-import styles from './loginForm.module.css';
+import styles from './LoginForm.module.css';
 
 const INITIAL_STATE = {
   name: '',
