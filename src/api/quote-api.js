@@ -10,7 +10,7 @@ export const requestQuote = async () => {
   try {
     const { data } = await quoteInstance.get('/', {
       params: {
-        category: 'happiness',
+        category: 'death',
       },
       headers: {
         'X-Api-Key': API_KEY,

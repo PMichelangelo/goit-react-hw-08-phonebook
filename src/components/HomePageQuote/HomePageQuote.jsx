@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectQuote } from '../../redux/quote/quote-selectors';
 import { fetchQuote } from '../../redux/quote/quote-operations';
+
 import Button from '../Button/Button';
+import Loader from 'components/Loader/Loader';
 
 import styles from './homePageQuote.module.css';
 
@@ -26,18 +28,19 @@ const HomePageQuote = () => {
   console.log(isLoading);
 
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className={styles.wrapper}>
+      <h1>Hey, smile and remember:</h1>
       {error && <p>{error}</p>}
       {quotes && (
-        <div>
-          <h2>{quotes.quote}</h2>
-          <p>{quotes.author}</p>
+        <div className={styles.quotesWrapper}>
+          <h2 className={styles.qoute}>"{quotes.quote}"</h2>
+          <p className={styles.author}>{quotes.author}</p>
         </div>
       )}
       <Button onClick={handleClick} disabled={isLoading}>
         {isLoading ? 'Loading...' : 'Get another quote'}
       </Button>
+      {isLoading && <Loader />}
     </div>
   );
 };

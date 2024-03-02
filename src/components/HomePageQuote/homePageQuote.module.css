@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.quotesWrapper {
+  width: 500px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.qoute {
+  font-style: italic;
+  padding: 10px 0;
+}
+
+.author {
+  text-align: end;
+  font-style: italic;
+}

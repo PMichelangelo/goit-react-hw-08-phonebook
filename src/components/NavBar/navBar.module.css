@@ -1,6 +1,7 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковой ширины */
+  justify-items: center;
   padding: 16px 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -10,4 +11,13 @@
   text-decoration: none;
   color: #000;
   font-size: 18px;
+  align-items: flex-start;
+}
+
+.navbarEl:first-child {
+  justify-self: start;
+}
+
+.navbarEl:last-child {
+  justify-self: end;
 }

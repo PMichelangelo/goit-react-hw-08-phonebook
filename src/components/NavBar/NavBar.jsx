@@ -14,11 +14,21 @@ const NavBar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <Link to="/" className={styles.logo}>
-        Logo
-      </Link>
-      <NavBarMenu />
-      {isLogin ? <NavBarUser /> : <NavBarAuth />}
+      <span className={styles.navbarEl}>
+        <Link to="/" className={styles.logo}>
+          Logo
+        </Link>
+      </span>
+      <span className={styles.navbarEl}>
+        <NavBarMenu className={styles.navBarMenu} />
+      </span>
+      <span className={styles.navbarEl}>
+        {isLogin ? (
+          <NavBarUser className={styles.navBarUser} />
+        ) : (
+          <NavBarAuth className={styles.navBarAuth} />
+        )}
+      </span>
     </nav>
   );
 };
