@@ -4,6 +4,8 @@ import LoginForm from 'components/LoginForm/LoginForm';
 
 import { login } from '../../redux/auth/auth-operations';
 
+import Notiflix from 'notiflix';
+
 import {
   selectAuthLoading,
   selectAuthError,

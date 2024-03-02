@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 
 import {
   signupRequest,
@@ -27,6 +28,7 @@ export const login = createAsyncThunk(
       const data = await loginRequest(body);
       return data;
     } catch (error) {
+      Notiflix.Notify.failure('Incorect email or password. Try again!');
       console.log(error);
       return rejectWithValue(error.response.data.message);
     }

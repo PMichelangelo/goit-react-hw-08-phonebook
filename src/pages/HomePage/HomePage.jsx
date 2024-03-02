@@ -1,9 +1,12 @@
+import HomePageQuote from 'components/HomePageQuote/HomePageQuote';
+
 const HomePage = () => {
+  console.log('hp mount');
   return (
     <div>
-      <h1>Home page</h1>
+      <HomePageQuote />
     </div>
-  )
-}
+  );
+};
 
 export default HomePage;
