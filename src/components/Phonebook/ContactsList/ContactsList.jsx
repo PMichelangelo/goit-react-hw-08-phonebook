@@ -12,6 +12,7 @@ import {
 } from '../../../redux/contacts/contact-selectors';
 
 import styles from './contactsList.module.css';
+import user from '../../../icons/user.svg';
 
 const ContactsList = () => {
   const items = useSelector(selectFilteredContacts);
@@ -28,6 +29,7 @@ const ContactsList = () => {
 
   const elements = items.map(({ id, name, number }) => (
     <li key={id} className={styles.listItem}>
+      <img src={user} alt="" className={styles.user} />
       {name}: {number}{' '}
       <button
         type="button"

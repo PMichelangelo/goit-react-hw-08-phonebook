@@ -1,12 +1,21 @@
+.formWrapper {
+  position: absolute;
+  width: 300px;
+  top: 100px;
+  left: 40%;
+  background-color: rgba(255, 255, 255, 0.631);
+  padding: 15px;
+}
+
 .form {
-  margin: 20px;
+  padding: 15px 0;
 }
 .wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   margin-bottom: 15px;
 }
 
 .wrapper label {
-  width: 80px;
+  padding-bottom: 5px;
 }

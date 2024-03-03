@@ -2,9 +2,18 @@
 }
 
 .listItem {
+  display: flex;
   margin: 10px 0;
   font-size: 18px;
+  border-bottom: 1px solid;
+  padding: 5px 0;
 }
 
 .deleteContactBtn {
+  margin-left: auto;
+}
+
+.user {
+  width: 16px;
+  padding-right: 5px;
 }

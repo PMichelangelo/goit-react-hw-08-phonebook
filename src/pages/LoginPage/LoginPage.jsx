@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import LoginForm from 'components/LoginForm/LoginForm';
 
 import { login } from '../../redux/auth/auth-operations';
-
-import Notiflix from 'notiflix';
+import Loader from 'components/Loader/Loader';
 
 import {
   selectAuthLoading,
@@ -23,8 +22,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <h1>Login Page</h1>
-      {authLoading && <p>...Login in progress</p>}
+      {authLoading && <Loader />}
       <LoginForm onSubmit={handleLogin} />
       {authError && <p style={{ color: 'red' }}>{authError}</p>}
     </div>

@@ -15,6 +15,11 @@ export const signup = createAsyncThunk(
       const data = await signupRequest(body);
       return data;
     } catch (error) {
+      if (error.response.status === 400) {
+        Notiflix.Notify.failure('User with this email is already exist');
+      } else {
+        Notiflix.Notify.failure('Oops, something goes wrong :(');
+      }
       console.log(error);
       return rejectWithValue(error.response.data.message);
     }
@@ -28,8 +33,11 @@ export const login = createAsyncThunk(
       const data = await loginRequest(body);
       return data;
     } catch (error) {
-      Notiflix.Notify.failure('Incorect email or password. Try again!');
-      console.log(error);
+      if (error.response.status === 400) {
+        Notiflix.Notify.failure('Incorect email or password!');
+      } else {
+        Notiflix.Notify.failure('Oops, something goes wrong :(');
+      }
       return rejectWithValue(error.response.data.message);
     }
   }

@@ -1,4 +1,5 @@
 import { useState, useId } from 'react';
+import BGVideo from 'components/BGVideo/BGVideo';
 
 import styles from './LoginForm.module.css';
 
@@ -29,31 +30,37 @@ const LoginForm = ({ onSubmit }) => {
 
   const { email, password } = state;
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <div className={styles.wrapper}>
-        <label htmlFor={emailId}>Email:</label>
-        <input
-          value={email}
-          onChange={handleChange}
-          type="email"
-          name="email"
-          id={emailId}
-          required
-        />
+    <div>
+      <BGVideo />
+      <div className={styles.formWrapper}>
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.wrapper}>
+            <label htmlFor={emailId}>Email:</label>
+            <input
+              value={email}
+              onChange={handleChange}
+              type="email"
+              name="email"
+              id={emailId}
+              required
+            />
+          </div>
+          <div className={styles.wrapper}>
+            <label htmlFor={passwordId}>Password:</label>
+            <input
+              value={password}
+              onChange={handleChange}
+              type="password"
+              name="password"
+              id={passwordId}
+              required
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
       </div>
-      <div className={styles.wrapper}>
-        <label htmlFor={passwordId}>Password:</label>
-        <input
-          value={password}
-          onChange={handleChange}
-          type="password"
-          name="password"
-          id={passwordId}
-          required
-        />
-      </div>
-      <button type="submit">Login</button>
-    </form>
+    </div>
   );
 };
 
