@@ -15,12 +15,17 @@ export const signup = createAsyncThunk(
       const data = await signupRequest(body);
       return data;
     } catch (error) {
-      if (error.response.status === 400) {
+      console.log(error.response.data.code);
+      if (error.response.data.code === 11000) {
         Notiflix.Notify.failure('User with this email is already exist');
+      } else if (error.response.data.errors.password.kind === 'minlength') {
+        Notiflix.Notify.failure('Password must be at least 8 characters long', {
+          timeout: 6000,
+        });
       } else {
-        Notiflix.Notify.failure('Oops, something goes wrong :(');
+        Notiflix.Notify.failure('Oops, something went wrong :(');
       }
-      console.log(error);
+      console.log(error.response.data.errors.password.kind);
       return rejectWithValue(error.response.data.message);
     }
   }

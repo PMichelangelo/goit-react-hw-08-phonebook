@@ -5,7 +5,6 @@ import { fetchQuote } from '../../redux/quote/quote-operations';
 
 import Button from '../Button/Button';
 import Loader from 'components/Loader/Loader';
-import BGVideo from 'components/BGVideo/BGVideo';
 
 import styles from './homePageQuote.module.css';
 
@@ -30,7 +29,6 @@ const HomePageQuote = () => {
 
   return (
     <div className={styles.wrapper}>
-      <BGVideo />
       <div className={styles.qouteContainer}>
         <h1 className={styles.headerText}>Hey, smile and remember:</h1>
         {error && <p>{error}</p>}

@@ -22,9 +22,11 @@ const LoginPage = () => {
 
   return (
     <div>
-      {authLoading && <Loader />}
-      <LoginForm onSubmit={handleLogin} />
-      {authError && <p style={{ color: 'red' }}>{authError}</p>}
+      <LoginForm
+        onSubmit={handleLogin}
+        isLoading={authLoading}
+        error={authError}
+      />
     </div>
   );
 };

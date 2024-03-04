@@ -1,5 +1,5 @@
 import { useState, useId } from 'react';
-import BGVideo from 'components/BGVideo/BGVideo';
+import { LoaderBlock } from 'components/Loader/Loader';
 
 import styles from './LoginForm.module.css';
 
@@ -9,7 +9,7 @@ const INITIAL_STATE = {
   password: '',
 };
 
-const LoginForm = ({ onSubmit }) => {
+const LoginForm = ({ onSubmit, isLoading, error }) => {
   const [state, setState] = useState({ ...INITIAL_STATE });
 
   const handleChange = ({ target }) => {
@@ -31,10 +31,14 @@ const LoginForm = ({ onSubmit }) => {
   const { email, password } = state;
   return (
     <div>
-      <BGVideo />
       <div className={styles.formWrapper}>
         <h1>Login</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
+          {isLoading && (
+            <span className={styles.loaderContainer}>
+              <LoaderBlock />
+            </span>
+          )}
           <div className={styles.wrapper}>
             <label htmlFor={emailId}>Email:</label>
             <input
@@ -57,6 +61,7 @@ const LoginForm = ({ onSubmit }) => {
               required
             />
           </div>
+          {/* {error && <p className={styles.error}>{error}</p>} */}
           <button type="submit">Login</button>
         </form>
       </div>

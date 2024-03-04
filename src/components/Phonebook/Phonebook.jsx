@@ -1,14 +1,12 @@
 import PhonebookForm from './PhonebookForm/PhonebookForm';
 import ContactsList from './ContactsList/ContactsList';
 import Filter from './Filter/Filter';
-import BGVideo from 'components/BGVideo/BGVideo';
 
 import styles from './phonebook.module.css';
 
 const Phonebook = () => {
   return (
     <div className={styles.phonebookWrapper}>
-      <BGVideo />
       <div className={styles.formContainer}>
         <PhonebookForm />
         <div className={styles.listWrapper}>
