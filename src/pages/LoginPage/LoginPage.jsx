@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import LoginForm from 'components/LoginForm/LoginForm';
 
 import { login } from '../../redux/auth/auth-operations';
-import Loader from 'components/Loader/Loader';
 
 import {
   selectAuthLoading,
