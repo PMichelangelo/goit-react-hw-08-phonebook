@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
 
 import {
   fetchContacts,
@@ -41,11 +43,14 @@ const ContactsList = () => {
     </li>
   ));
   return (
+    <SimpleBar style={{ maxHeight: 300 }} autoHide = {true} className={styles.customScrollbar}>
     <ul className={styles.contactsList}>
       {isLoading && <p>...Loading</p>}
       {error && <p>{error}</p>}
       {elements}
     </ul>
+    </SimpleBar>
+
   );
 };
 

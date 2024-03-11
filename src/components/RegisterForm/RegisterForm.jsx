@@ -32,7 +32,7 @@ const RegisterForm = ({ onSubmit, isLoading, error }) => {
 
   const { name, email, password } = state;
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.formWrapper}>
         <h1>Sign in</h1>
         <form className={styles.form} onSubmit={handleSubmit}>

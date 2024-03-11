@@ -1,4 +1,17 @@
+/* Track */
+.simplebar-track.simplebar-vertical {
+  background-color: #ff0000; /* цвет трека */
+  width: 10px; /* ширина трека */
+}
+
+/* Thumb (ползунок) */
+.simplebar-scrollbar.simplebar-visible:before {
+  background-color: #e80000; /* цвет ползунка */
+  border-radius: 5px; /* радиус скругления ползунка */
+}
 .contactsList {
+  overflow: auto;
+  height: 200px;
 }
 
 .listItem {

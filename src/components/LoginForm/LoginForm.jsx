@@ -30,7 +30,7 @@ const LoginForm = ({ onSubmit, isLoading, error }) => {
 
   const { email, password } = state;
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.formWrapper}>
         <h1>Login</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
